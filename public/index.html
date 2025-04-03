@@ -1,43 +1,304 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DRIVER24</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#"> <img src="https://miro.medium.com/v2/resize:fit:2400/2*XM8EnIy0Za79kG_LxU236g.png" class="card-img-top" alt="Car 1" height="100" width="200"></a>
+  
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#services">Services</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#hire-driver">Hire Driver</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#available-jobs">Available Jobs</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="vehicle_sales.html">Vehicle Sales</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#contact">Contact</a>
+      </li>
+    </ul>
+  </div>
+</nav>
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+<!-- Home Section -->
+<section class="jumbotron text-center">
+  <h1>Welcome to DRIVER24</h1>
+  <p class="lead">Your trusted partner for hiring professional drivers,go as a acting driver for trucks,cars,JCB,Pickup trucks and granes etc and buying quality vehicles.</p>
+</section>
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+<!-- Services Section -->
+<section id="services" class="container py-5">
+  <h2 class="text-center mb-4">Our Services</h2>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card">
+        <img src="https://tse1.mm.bing.net/th?id=OIP.qaPv-RIj20JSUKMDAKbWrgAAAA&pid=Api&P=0&h=180" class="card-img-top" alt="Car 1">
+        <div class="card-body">
+          <h5 class="card-title"><a class="nav-link" href="#available-jobs">Available Jobs</a></h5>
+          <p class="card-text">We offer a wide range of vehicles for hire, suitable for all your needs.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <img src="https://tse4.mm.bing.net/th?id=OIP.0G3dW4YAyLD2Z02jBfbJxQHaE8&pid=Api&P=0&h=180" class="card-img-top" alt="Car 2">
+        <div class="card-body">
+          <h5 class="card-title"><a class="nav-link" href="#hire-driver">Hire Professional Driver</a></h5>
+          <p class="card-text">Hire professional and experienced drivers for your personal or business needs.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <img src="https://tse1.mm.bing.net/th?id=OIP.rzAfqpwyzDlvSifuBbI9yQHaD4&pid=Api&P=0&h=180" class="card-img-top" alt="Car 3">
+        <div class="card-body">
+          <h5 class="card-title">
+            <a class="nav-link" href="vehicle_sales.html">Vehicle Sales</a>
+          <p class="card-text">We offer quality vehicles for sale at competitive prices.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Hire Driver Section -->
+<section id="hire-driver" class="container-fluid bg-white py-5">
+  <h2 class="text-center mb-4">Hire a Driver</h2>
+  <div class="row">
+    <div class="col-md-6">
+    <form action="/hire-driver" method="POST">
+            <div class="form-group">
+                <label for="driverName">Customer Name</label>
+                <input type="text" class="form-control" id="driverName" name="customerName" placeholder="Enter Your name" required>
+            </div>
+            <div class="form-group">
+                <label for="driverExperience">Experience Of Your Driver</label>
+                <input type="text" class="form-control" id="driverExperience" name="experience" placeholder="Enter experience">
+            </div>
+            <div class="form-group">
+                <label for="driverAge">Age</label>
+                <input type="number" class="form-control" id="driverAge" name="age" placeholder="Enter age">
+            </div>
+            <div class="form-group">
+                <label for="licenseType">Type of License</label>
+                <select class="form-control" id="licenseType" name="licenseType">
+                    <option value="lite">Lite</option>
+                    <option value="patch">Patch</option>
+                    <option value="heavy">Heavy</option>
+                    <option value="hydraulic">Hydraulic</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="stayType">Type of Stay</label>
+                <select class="form-control" id="stayType" name="stayType">
+                    <option value="Own Stay">Own Stay</option>
+                    <option value="Provide stay">Provide Stay</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="vehicleType">Type of Vehicle</label>
+                <select class="form-control" id="vehicleType" name="vehicleType">
+                    <option value="Car">Car</option>
+                    <option value="Trucks">Trucks</option>
+                    <option value="Pickup Truck">Pickup Truck</option>
+                    <option value="JCB">JCB</option>
+                    <option value="Hitachi excavator">Hitachi Excavator</option>
+                    <option value="Cranes">Cranes</option>
+                    <option value="Tractors">Tractors</option>
+                    <option value="Rig vehicles">Rig Vehicles</option>
+                    <option value="All commercial vehicles">All Commercial Vehicles</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+     </div>
+    <div class="col-md-6">
+      <img src="https://tse4.mm.bing.net/th?id=OIP.OIoIrx99OUiVNIRr8a8aQQHaIO&pid=Api&P=0&h=180" class="img-fluid" alt="Driver">
+    </div>
+  </div>
+</section>
+
+<!-- Available Jobs Section -->
+<section id="available-jobs" class="container py-5">
+  <h2 class="text-center mb-4">Available Jobs</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Customer Name</th>
+        <th scope="col">Location</th>
+        <th scope="col">Type of vehicle</th>
+        <th scope="col">Experice Needed</th>
+        <th scope="col">Salary per month</th>
+        <th scope="col">Contact</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>anand</td>
+        <td>Tirupur</td>
+        <td>Truck(Model:ashok Leyland 1920)</td>
+        <td>3 years</td>
+        <td>RS:25,000/month</td>
+        <td>6368643579</td>
+      </tr>
+      <tr>
+        <td>raja</td>
+        <td>Tirupur</td>
+        <td>Truck(MODEL:TATA 1620)</td>
+        <td>2 years</td>
+        <td>RS:25000/month</td>
+        <td>6368643579</td>
+      </tr>
+      <tr>
+        <td>deepan</td>
+        <td>Gobi</td>
+        <td>Pickup Truck(MOdel:TATA Yodra)</td>
+        <td>1 years</td>
+        <td>RS:15000/month</td>
+        <td>6368643579</td>
+      </tr>
+      <tr>
+        <td>Mani</td>
+        <td>Erode</td>
+        <td>Pickup Truck(Model:Mahindra Bolero Max)</td>
+        <td>3 years</td>
+        <td>RS:30,000/month</td>
+        <td>994568786</td>
+      </tr>
+      <tr>
+        <td>Vimal</td>
+        <td>Elumathur</td>
+        <td>Truck(Model:TATA Prima)</td>
+        <td>4 years</td>
+        <td>RS:35,000/month</td>
+        <td>6368643579</td>
+      </tr>
+      <tr>
+        <td>Sanjay</td>
+        <td>Bhavani</td>
+        <td>JCB(Model:3DX)</td>
+        <td>1 years</td>
+        <td>RS:15000/month</td>
+        <td>6368643579</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- Vehicle Sales Section -->
+<section id="vehicle_sales" class="container-fluid bg-light py-5">
+  <h2 class="text-center mb-4">Vehicle Sales</h2>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card">
+        <img src="https://tse3.mm.bing.net/th?id=OIP.n1s0xF-ty__0xQZhTM2TbwHaE7&pid=Api&P=0&h=180" class="card-img-top" alt="Car 4">
+        <div class="card-body">
+          <h5 class="card-title">TATA NEXON 2019 MODEL</h5>
+          <p class="card-text">Price: 8,000,00</p>
+          <button class="btn btn-success">Buy Now</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <img src="https://tse4.mm.bing.net/th?id=OIP.8Uy-qc3Y_WsZJUD87IfemgHaFj&pid=Api&P=0&h=180" class="card-img-top" alt="Car 5">
+        <div class="card-body">
+          <h5 class="card-title">MAHINDRA BOLERO PLUS 2021 MODEL</h5>
+          <p class="card-text">Price: 9,000,00</p>
+          <button class="btn btn-success">Buy Now</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <img src="https://tse1.mm.bing.net/th?id=OIP.v1GNqRFkzfTMHX4xQa8oCwHaGB&pid=Api&P=0&h=180" class="card-img-top" alt="Car 6">
+        <div class="card-body">
+          <h5 class="card-title">HYUNDAI CRETA 2023 MODEL</h5>
+          <p class="card-text">Price: 13,000,00</p>
+          <button class="btn btn-success">Buy Now</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+          <img src="https://tse2.mm.bing.net/th?id=OIP.RTFoxLT6oSfo4Zm8nfF6rwHaEK&pid=Api&P=0&h=180" class="card-img-top" alt="Car 6">
+          <div class="card-body">
+            <h5 class="card-title">ASHOK LEYLAND DOST 2020 MODEL</h5>
+            <p class="card-text">Price: 5,000,00</p>
+            <button class="btn btn-success">Buy Now</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <img src="https://tse4.mm.bing.net/th?id=OIP._2O8uJkMQj-sGpeT-01YHAHaFF&pid=Api&P=0&h=180" class="card-img-top" alt="Car 6">
+          <div class="card-body">
+            <h5 class="card-title">TATA PRIMA 2023 MODEL</h5>
+            <p class="card-text">Price: 45,000,00</p>
+            <button class="btn btn-success">Buy Now</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <img src="https://tse1.mm.bing.net/th?id=OIP.YxmQuadFuIikjNbcZFgXJQAAAA&pid=Api&P=0&h=180" class="card-img-top" alt="Car 6">
+          <div class="card-body">
+            <h5 class="card-title">JCB 3DX 2019</h5>
+            <p class="card-text">Price: 27,000,00</p>
+            <button class="btn btn-success">Buy Now</button>
+          </div>
+        </div>
+      </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="container py-5">
+  <h2 class="text-center mb-4">Contact Us</h2>
+  <form>
+    <div class="form-group">
+      <label for="contactName">Name</label>
+      <input type="text" class="form-control" id="contactName" placeholder="Enter your name">
+    </div>
+    <div class="form-group">
+      <label for="contactEmail">Email</label>
+      <input type="email" class="form-control" id="contactEmail" placeholder="Enter your email">
+    </div>
+    <div class="form-group">
+      <label for="contactMessage">Message</label>
+      <textarea class="form-control" id="contactMessage" rows="3" placeholder="Enter your message"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</section>
+
+<!-- Footer -->
+<footer class="bg-dark text-white text-center py-3">
+</footer>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
 </html>
