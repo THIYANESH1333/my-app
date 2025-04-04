@@ -1,36 +1,14 @@
-pipeline {
-    agent {
-        kubernetes {
-            yaml """
-            apiVersion: v1
-            kind: Pod
-            spec:
-              containers:
-              - name: node
-                image: node:18
-                command: ["cat"]
-                tty: true
-            """
-        }
-    }
-    stages {
-        stage('Build Docker Image') {
-            steps {
-                container('node') {
-                    sh '''
-                    npm install
-                    npm run build
-                    docker build -t thiyanesh1333/react-app .
-                    '''
-                }
-            }
-        }
-        stage('Deploy to Kubernetes') {
-            steps {
-                withKubeConfig([credentialsId: 'k8s-creds']) {
-                    sh 'kubectl apply -f deployment.yaml'
-                }
-            }
-        }
-    }
+pipeline { 
+    agent any  
+    stages { 
+        stage('Build and Push Docker Image') { 
+            steps { 
+                // Grant executable permissions to the build script 
+                sh 'chmod +x deployment.sh'  
+
+                // Build the Docker image using the build script 
+                sh './deployment.sh'  
+            } 
+        } 
+    } 
 }
