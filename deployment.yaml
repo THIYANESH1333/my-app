@@ -5,6 +5,7 @@ chmod +x build.sh
 docker login -u thiyanesh1333 -p THIY@2003
 # Use non-interactive login
 echo "THIY@2003" | docker login -u "thiyanesh1333" --password-stdin
+docker build -t thiyanesh1333/react-app .
 
 # Tag and push the image
 docker tag thiyanesh1333/react-app
@@ -14,3 +15,7 @@ docker push thiyanesh1333/react-app
 docker pull thiyanesh1333/react-app
 
 docker run -d -p 8000:80 --name=my-service-repo thiyanesh1333/react-app
+#!/bin/bash
+# Build Docker image
+
+kubectl apply -f k8s/
