@@ -1,2 +1,2 @@
 #!/bin/bash
-docker build -t test .
+docker build -t thiyanesh1333/react-app .
