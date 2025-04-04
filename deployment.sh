@@ -5,7 +5,6 @@ chmod +x build.sh
 docker login -u thiyanesh1333 -p THIY@2003
 # Use non-interactive login
 echo "THIY@2003" | docker login -u "thiyanesh1333" --password-stdin
-docker build -t thiyanesh1333/react-app .
 
 # Tag and push the image
 docker tag thiyanesh1333/react-app
