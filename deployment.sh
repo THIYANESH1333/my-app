@@ -14,7 +14,3 @@ docker push thiyanesh1333/react-app
 docker pull thiyanesh1333/react-app
 
 docker run -d -p 8000:80 --name=my-service-repo thiyanesh1333/react-app
-#!/bin/bash
-# Build Docker image
-
-kubectl apply -f k8s/
