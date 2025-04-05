@@ -1,7 +1,7 @@
-docker build -t task37 .
+docker build -t task40 .
 echo Hyyy
 docker login -u thiyanesh1333 -p THIY@2003
-docker tag task37 thiyanesh1333/react-app
+docker tag thiyanesh1333/react-app thiyanesh1333/react-app:latest
 docker push thiyanesh1333/react-app
 kubectl apply -f  deploy.yaml --validate=false
 kubectl apply -f svc.yaml --validate=false
