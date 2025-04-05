@@ -2,13 +2,17 @@ pipeline {
     agent any
 
     stages {
-        stage('Build & Deploy') {
+        stage('Build and Push Docker Image') {
             steps {
-                sh '''
-                    chmod +x build.sh
-                    ./build.sh
-                '''
+                // Grant executable permissions to the build script
+                sh 'chmod +x build.sh'
+
+                // Build the Docker image using the build script
+                sh './build.sh'
+
+                
             }
         }
+
     }
 }
