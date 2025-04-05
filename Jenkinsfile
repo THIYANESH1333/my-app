@@ -1,17 +1,13 @@
 pipeline {
-    agent {
-        docker {
-            image 'docker:20.10.16-dind'
-            args '--privileged -v /var/run/docker.sock:/var/run/docker.sock'
-        }
-    }
+    agent any
 
     stages {
-        stage('Build and Push Docker Image') {
+        stage('Build & Deploy') {
             steps {
-                sh 'apk add --no-cache docker-cli curl bash' // Install required tools
-                sh 'chmod +x build.sh'
-                sh './build.sh'
+                sh '''
+                    chmod +x build.sh
+                    ./build.sh
+                '''
             }
         }
     }
