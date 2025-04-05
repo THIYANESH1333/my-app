@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: test
-        image: surethan37/task2:sample
+        image: thiyanesh1333/react-app
         imagePullPolicy: Always
         ports:
         - containerPort: 80
